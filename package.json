@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "browser-sync start --watch --server --directory ./",
+    "dev": "gatsby develop"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.12"
+  },
+  "dependencies": {
+    "gatsby": "^1.0.7",
+    "gatsby-link": "^1.0.9"
+  }
 }

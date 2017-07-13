@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component} from 'react';
 import favicon from './favicon.ico';
 
 let inlinedStyles = '';
@@ -10,9 +10,10 @@ if (process.env.NODE_ENV === 'production') {
   }
 }
 
-export default class HTML extends React.Component {
+export default class Html extends Component {
   render() {
     let css;
+    const customLink = 'https://fonts.googleapis.com/css?family=Open+Sans|Zilla+Slab';
     if (process.env.NODE_ENV === 'production') {
       css = (
         <style
@@ -32,10 +33,10 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
-          <link href="https://fonts.googleapis.com/css?family=Open+Sans|Zilla+Slab" rel="stylesheet">
+          <link href={customLink} rel="stylesheet" />
           {css}
         </head>
-        <body className="hello">
+        <body className="hello--world">
           <div
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}
